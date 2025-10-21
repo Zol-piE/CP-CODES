@@ -14,6 +14,20 @@ void factors(int n)
     if(n>1) cout<<n<<endl;
     else cout<<endl;
 }
+void sieve()
+{
+    // calculates prime factors of all number upto 2 * 10^5;
+    int SIZE = 2e5 + 1;
+    vector<vector<int>> pf(2e5+1);
+    for(int i = 2;i<=SIZE;i++)
+    {
+        if( !pf[i].empty()) continue;
+        for(int j = i;j<=SIZE; j +=i)
+        {
+            pf[j].push_back(i);
+        }
+    }
+}
 void opFactors(int n)
 {
     if(n<=1) { cout<<1<<endl; return ;}
