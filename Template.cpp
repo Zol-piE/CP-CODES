@@ -30,6 +30,7 @@ void pr(vector<int> &arr,int n)
 }
 signed main()
 {
+    OP
     int tc;
     cin >> tc;
     while (tc--)
