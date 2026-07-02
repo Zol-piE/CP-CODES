@@ -35,7 +35,7 @@ void pr(vi &arr, int n)
 }
 void inputarray(vector<int> &arr, int n)
 {
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i <= n; i++)
         cin >> arr[i];
 }
 class SegmentTree
@@ -129,6 +129,23 @@ signed main()
     cin >> tc;
     while (tc--)
     {
+        int n, l, r;
+        cin >> n >> l >> r;
+        vector<int> arr(n + 1, 0);
+        inputarray(arr, n);
+        vector<int> preArr(n + 1, 0);
+        preArr[1] = arr[1];
+        for (int i = 2; i <= n; i++)
+        {
+            preArr[i] = preArr[i - 1] + arr[i];
+        }
+        int left = 0;
+        if (l > 1)
+            left = preArr[l - 1];
+        int right = 0;
+        if (r < n)
+            right = preArr[n] - preArr[r];
+        cout << max(left, right) << endl;
     }
 
     return 0;
