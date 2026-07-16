@@ -90,8 +90,8 @@ signed main()
     cin >> tc;
     while (tc--)
     {
-        int n;
-        cin >> n;
+        int n = 6;
+        // cin >> n;
         dsu gp(n);
         gp.unite(1, 3);
         gp.unite(1, 5);
